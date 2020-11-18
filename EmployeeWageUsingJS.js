@@ -192,3 +192,27 @@ console.log("UC 10\nShowing daily hours worked and wage alongwith day using obje
 empDayWageHrArray.forEach(x=>{
     console.log(x.dayNumber+" => "+x.dailyHr+" => "+x.dailyWage);
 });
+
+// UC 11 : Perform following Object operations using Arrow Functions:
+// a. Calc total Wage and total hours worked
+// b. Show the full workings days using foreach
+// c. Show Part working days using map() by reducing to String Array
+// d. No working days only using map() function
+
+// UC 11A
+console.log("UC 11A:")
+totalWage = empDayWageHrArray.filter(object=>object.dailyWage>0).reduce((totalWage,object)=>totalWage+=object.dailyWage,0);
+totalHrs = empDayWageHrArray.filter(object=>object.dailyHr>0).reduce((totalHrs,object)=>totalHrs+=object.dailyHr,0);
+console.log("Total wage: "+totalWage+",Total work hours: "+totalHrs);
+// UC 11B
+console.log("UC 11B:")
+console.log("Printing the full working days:")
+empDayWageHrArray.filter(object=>object.dailyHr==8).forEach(object=>process.stdout.write(object.toString()));
+// UC 11C
+console.log("\nUC 11C:")
+let partTimeWorkingDaysArr = empDayWageHrArray.filter(object=>object.dailyHr==4).map(object=>object.toString());
+console.log("Printing the part time working days:\n"+partTimeWorkingDaysArr);
+// UC 11D
+console.log("\nUC 11D:")
+let noWorkingDaysArr = empDayWageHrArray.filter(object=>object.dailyHr==0).map(object=>object.toString());
+console.log("Printing the no working days:\n"+noWorkingDaysArr);
