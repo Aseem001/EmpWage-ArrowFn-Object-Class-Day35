@@ -216,35 +216,3 @@ console.log("Printing the part time working days:\n"+partTimeWorkingDaysArr);
 console.log("\nUC 11D:")
 let noWorkingDaysArr = empDayWageHrArray.filter(object=>object.dailyHr==0).map(object=>object.toString());
 console.log("Printing the no working days:\n"+noWorkingDaysArr);
-
-
-//UC 12 : Ability to create Employee Payroll Data with id, name and salary
-
-{
-    class EmployeePayrollData 
-    {
-        // fields
-        id;
-        name; 
-        salary;
-
-        // constructor
-        constructor(id, name, salary) 
-        {
-            this.id = id;
-            this.name = name;
-            this.salary = salary;
-        }
-
-        // overriding toString() method 
-        toString() 
-        {
-            return "Id= " + this.id + ", Name= " + this.name + ", Salary= " + this.salary;
-        } 
-    }
-    let employeePayrollDataObj = new EmployeePayrollData(1, "Mark", 30000);
-    console.log("UC-12\nClass contents:\n" + employeePayrollDataObj.toString());
-    console.log("Changing name:")
-    employeePayrollDataObj.name = "john";
-    console.log(employeePayrollDataObj.toString());   
-}
